@@ -73,4 +73,4 @@ Event planning can get messy — juggling venues, vendors, designs, and details.
 - A contact page with a live map and inquiry form  
 - Admin panel for easy content updates  
 - Gallery enhancements with categories and filters  
-- Maybe even... ✨ dark mode? 👀
+- Maybe even...dark mode? 
