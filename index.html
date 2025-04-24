@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Golden Moments</title>
+  <link rel="stylesheet" href="assets/MainStyle.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 15px 30px;
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      color: white;
+    }
+
+    .slideshow {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      /* z-index: -1; */
+    }
+
+    .slideshow div {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .hero-content {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .book-btn {
+      padding: 12px 24px;
+      background-color: #ffcc00;
+      border: none;
+      color: black;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      text-decoration: none;
+      z-index: 100;
+    }
+
+    .book-btn:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 60px 20px;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+
+    .content-box {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .footer-links {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .footer-links a {
+      margin: 0 10px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      z-index: 2;
+      border-radius: 5px;
+    }
+
+    .slider-btn.prev {
+      left: 10px;
+    }
+
+    .slider-btn.next {
+      right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <img src="assets/logo.png" alt="Golden Moments Logo" style="height: 100px; vertical-align: middle;">
+    <a href="index.html">Home</a>
+    <a href="pages/About.html">About</a>
+    <a href="pages/Services.html">Services</a>
+    <a href="pages/gallery.html">Gallery</a>
+  </nav>
+
+  <!-- Hero Section with Slideshow -->
+  <div class="hero">
+    <div class="slideshow" id="slideshow">
+      <div style="background-image: url('dinner.jpg');"></div>
+      <div style="background-image: url('extra2.webp');"></div>
+      <div style="background-image: url('extra.webp');"></div>
+      <div style="background-image: url('wedding1.jpg');"></div>
+      <div style="background-image: url('venue.jpg');"></div>
+      <div style="background-image: url('corporate-dinner.jpg');"></div>
+      <div style="background-image: url('baby shower.jpg');"></div>
+      <div style="background-image: url('diner.jpg');"></div>
+    </div>
+
+    <button class="slider-btn prev" onclick="prevSlide()">❮</button>
+    <button class="slider-btn next" onclick="nextSlide()">❯</button>
+
+    <div class="hero-content">
+      <h1>Golden Moments</h1>
+      <a href="assets/login.html" class="book-btn">Book Now</a>
+    </div>
+  </div>
+
+  <!-- Why Us Section -->
+  <section id="why-us">
+    <h2>Why Us?</h2>
+    <div class="content-box">
+      <h4>Experience and Expertise</h4>
+      <p>We have event organizers since 2020. Our experienced team deeply understands the event industry and delivers flawlessly every time.</p>
+<br/>
+      <h4>Vendor Network</h4>
+      <p>We have a vast vendor network across India, the Middle East, and South-East Asia, allowing us to provide top-tier services tailored to client needs.</p>
+<br/>
+      <h4>Cost Effective</h4>
+      <p>Our services are affordable and impactful. We work with your budget to plan high-quality events without compromising on excellence.</p>
+    </div>
+  </section>
+
+  <!-- Our Services -->
+  <section id="services">
+    <h2>Our Services Include</h2>
+    <div class="content-box">
+      <h3>Event Management Services</h3>
+      <p>We manage complete end-to-end event production for virtual and physical events. From design and coding to equipment rentals for on-site events, we provide it all.</p>
+<br/>
+      <h3>Event Planning Services</h3>
+      <p>We help you plan your event by building a roadmap detailing every step from the initial idea to flawless execution.</p>
+<br/>
+      <h3>Brand Activation Services</h3>
+      <p>We help your brand get noticed through unique and engaging campaigns that leave lasting impressions.</p>
+    </div>
+  </section>
+
+  <!-- Motto & Vision -->
+  <section id="motto-vision">
+    <h2>Our Motto</h2>
+    <div class="content-box"><br/>
+      <p text-align="center">"Turning your cherished moments into timeless memories."</p><br/>
+    </div><br/>
+    <h2>Our Vision</h2>
+    <div class="content-box">
+      <p>"To be the most trusted and innovative event management company, creating unforgettable experiences that bring joy, foster connections, and celebrate life's golden moments with elegance and perfection."</p>
+    </div>
+  </section>
+
+  <!-- Mission & Links -->
+  <section id="mission">
+    <h2>Golden Moments</h2>
+    <h3>Our Mission</h3><br/>
+    <div class="content-box">
+      <p>"Our mission is to craft extraordinary events that reflect the unique stories and aspirations of our clients. By combining creativity, precision, and a passion for excellence, we transform visions into reality, ensuring every golden moment is cherished for a lifetime."</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="pages/About.html">About</a>
+      <a href="pages/Services.html">Services</a>
+      <a href="pages/gallery.html">Gallery</a>
+      <p>Contact Us: info@goldenmoments.com</p>
+      <p>Phone: +123 456 7890</p>
+      <p>&copy; 2025 Golden Moments. All rights reserved.</p>
+    </div>
+
+  </footer>
+</body>
+
+<script>
+  let slideIndex = 0;
+  const slides = document.querySelectorAll('.slideshow div');
+  const totalSlides = slides.length;
+
+  function showSlide(index) {
+slides.forEach((slide, i) => {
+  if (i === index) {
+    slide.classList.add('active');
+  } else {
+    slide.classList.remove('active');
+  }
+});
+}
+
+  function nextSlide() {
+    slideIndex = (slideIndex + 1) % totalSlides;
+    showSlide(slideIndex);
+  }
+
+  function prevSlide() {
+    slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+    showSlide(slideIndex);
+  }
+
+  // Show first slide initially
+  showSlide(slideIndex);
+
+  // Auto-slide every 3 seconds
+  setInterval(nextSlide, 3000);
+
+  document.querySelector('.book-btn').addEventListener('click', function(event) {
+  event.preventDefault(); // Prevents the default link behavior
+  window.location.href = "assets/login.html"; // Redirect to the login page
+});
+
+
+</script>
+</html>

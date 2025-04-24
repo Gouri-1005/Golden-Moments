@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('loginbg.jpg');
+      background-color: #f4f4f4;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    div {
+      font-weight: bold;
+    }
+
+    .login-container {
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 30px 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-container h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    .form-group input:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .login-button:hover {
+      background-color: #0056b3;
+    }
+
+    .signup-text {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .signup-text a {
+      color: #007BFF;
+      text-decoration: none;
+    }
+
+    .signup-text a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form action="login.php" method="POST">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+
+      <button type="submit" class="login-button">Login</button>
+    </form>
+
+    <div class="signup-text">
+      Don't have an account? <a href="signup.php">Sign up</a>
+    </div>
+  </div>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  include 'db_config.php'; // Your DB config file
+
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+
+  $stmt = $conn->prepare("SELECT password FROM users WHERE email = ?");
+  $stmt->bind_param("s", $email);
+  $stmt->execute();
+  $stmt->store_result();
+
+  if ($stmt->num_rows > 0) {
+    $stmt->bind_result($hashed_password);
+    $stmt->fetch();
+
+    if (password_verify($password, $hashed_password)) {
+      echo "<script>alert('Login successful!'); window.location.href='booking.php';</script>";
+    } else {
+      echo "<script>alert('Invalid password.');</script>";
+    }
+  } else {
+    echo "<script>alert('Email not found.');</script>";
+  }
+
+  $stmt->close();
+  $conn->close();
+}
+?>
+</body>
+</html>
