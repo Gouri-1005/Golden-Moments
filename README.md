@@ -1,4 +1,4 @@
-## Golden Moments By N&G
+# Golden Moments By N&G
 
 Welcome to **Golden Moments By N&G** – your go-to digital companion for crafting unforgettable events. Whether it’s a dreamy wedding, a classy corporate dinner, or a vibrant baby shower, we’ve built a website that helps bring your special moments to life with style and ease.
 
@@ -67,7 +67,7 @@ Event planning can get messy — juggling venues, vendors, designs, and details.
 
 ---
 
-# What's Next for Golden Moments?
+## What's Next for Golden Moments?
 
 - Adding a client login and event booking system  
 - A contact page with a live map and inquiry form  
