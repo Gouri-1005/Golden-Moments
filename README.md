@@ -4,13 +4,13 @@ Welcome to **Golden Moments By N&G** – your go-to digital companion for crafti
 
 ---
 
-What is Golden Moments?
+## What is Golden Moments?
 
 Golden Moments is a sleek, multi-page event management website designed to showcase services, past events, and all the little touches that make celebrations magical. This project is all about **simplicity, elegance, and experience**.
 
 ---
 
-Features
+## Features
 
 - Smooth navigation with a fixed navbar
 - Fullscreen homepage with a dynamic image slideshow
@@ -25,7 +25,7 @@ Features
 
 ---
 
-Built With
+## Built With
 
 - `HTML` – for laying out the skeleton of the site  
 - `CSS` – for bringing the visual polish and responsiveness  
@@ -35,13 +35,13 @@ Built With
 
 ---
 
-Inspiration
+## Inspiration
 
 Event planning can get messy — juggling venues, vendors, designs, and details. We wanted to simplify that. Golden Moments was born to provide a stylish, professional platform where event management becomes an experience rather than a chore. Whether you're planning a lavish celebration or a cozy gathering, this website sets the stage.
 
 ---
 
-What We Learned
+## What We Learned
 
 - How to structure and manage a multi-page website
 - Writing dynamic UI logic in plain JavaScript
@@ -50,7 +50,7 @@ What We Learned
 
 ---
 
-Challenges
+## Challenges
 
 - Building a smooth image slideshow from scratch
 - Coordinating content and design across multiple pages
@@ -58,7 +58,7 @@ Challenges
 
 ---
 
-Accomplishments
+## Accomplishments
 
 - A fully functional, multi-page responsive site
 - Aesthetic slideshow with custom navigation
@@ -67,7 +67,7 @@ Accomplishments
 
 ---
 
-What's Next for Golden Moments?
+# What's Next for Golden Moments?
 
 - Adding a client login and event booking system  
 - A contact page with a live map and inquiry form  
